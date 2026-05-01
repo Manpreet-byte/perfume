@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 440" fill="none">
+  <rect width="520" height="440" rx="34" fill="url(#bg)"/>
+  <ellipse cx="260" cy="356" rx="110" ry="18" fill="#000" fill-opacity="0.45"/>
+  <path d="M213 118h94v22h-94v-22Z" fill="#D4AF37"/>
+  <path d="M197 145c0-7 6-13 13-13h100c7 0 13 6 13 13v20c0 9-7 16-16 16H213c-9 0-16-7-16-16v-20Z" fill="#FFEFC9"/>
+  <path d="M185 180c0-11 9-20 20-20h110c11 0 20 9 20 20v118c0 31-25 56-56 56h-38c-31 0-56-25-56-56V180Z" fill="url(#bottle)"/>
+  <path d="M217 220h84" stroke="#FFF4D6" stroke-opacity="0.65" stroke-width="6" stroke-linecap="round"/>
+  <path d="M222 286c12 20 32 32 56 32" stroke="#FFF4D6" stroke-opacity="0.45" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="392" cy="110" r="64" fill="#D4AF37" fill-opacity="0.12"/>
+  <defs>
+    <linearGradient id="bg" x1="67" y1="44" x2="450" y2="403" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#140F0A"/>
+      <stop offset="0.5" stop-color="#050505"/>
+      <stop offset="1" stop-color="#1A1408"/>
+    </linearGradient>
+    <linearGradient id="bottle" x1="260" y1="160" x2="260" y2="354" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7D574"/>
+      <stop offset="0.5" stop-color="#BF8E19"/>
+      <stop offset="1" stop-color="#6E4E00"/>
+    </linearGradient>
+  </defs>
+</svg>
