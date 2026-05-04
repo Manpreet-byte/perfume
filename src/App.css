@@ -526,45 +526,26 @@ h4 {
   color: inherit;
 }
 
-/* Force all textual content to pure black as requested */
-/* This intentionally uses !important to override any existing color rules */
-body, body * {
-  color: #000000 !important;
+/* Targeted text color override: make main content text black while preserving
+   visual widgets and overlays for readability. Avoid global aggressive rules. */
+/* Core text elements */
+body, p, li, span, label, a, button, input, textarea, select, h1, h2, h3, h4, h5, h6 {
+  color: #000000;
+  -webkit-text-fill-color: #000000;
 }
 
-/* Also ensure SVG fills, strokes and text-fill are black */
-body, body * {
-  -webkit-text-fill-color: #000000 !important;
-  -moz-text-fill-color: #000000 !important;
-  text-fill-color: #000000 !important;
-  fill: #000000 !important;
-  stroke: #000000 !important;
+/* Ensure SVG icons inside UI use currentColor where possible; avoid forcing all fills */
+svg:not([data-keep-color]) { color: inherit; }
+
+/* Keep dark widgets readable: chat, voice, overlays remain white */
+.chat-window, .chat-window *, .chat-toggle, .voice-toggle, .voice-toggle *, .nav-left.open, .nav-left.open * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
 }
 
-svg, svg * {
-  fill: #000000 !important;
-  stroke: #000000 !important;
-}
-
-/* Aggressive override: ensure all rendered text appears pure black
-   This disables blending, filters, and opacity for text to maximize contrast. */
-html, body, body *,
-body *::before, body *::after {
-  color: #000000 !important;
-  -webkit-text-fill-color: #000000 !important;
-  -moz-text-fill-color: #000000 !important;
-  text-fill-color: #000000 !important;
-  fill: #000000 !important;
-  stroke: #000000 !important;
-  mix-blend-mode: normal !important;
-  filter: none !important;
-  opacity: 1 !important;
-}
-
-/* Exceptions: keep form placeholders readable while still black-colored */
+/* Placeholders */
 input::placeholder, textarea::placeholder {
-  color: #000000 !important;
-  opacity: 1 !important;
+  color: rgba(0,0,0,0.6);
 }
 
 .brand-mark.logo img {
