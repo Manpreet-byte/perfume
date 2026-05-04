@@ -1,33 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
-
+body {
+  color: #000;
+}
 :root {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
   line-height: 1.6;
   font-weight: 400;
-  /* Inverted palette: black<->white swapped per user request */
-  --palette-1: #ffffff;
-  --palette-2: #ededed;
-  --palette-3: #cfcfcf;
-  --palette-4: #b0b0b0;
-  --palette-5: #919191;
+  /* Soft peachy-cream luxury palette */
+  --palette-1: #FDF7F4;
+  --palette-2: #FAF3EE;
+  --palette-3: #F5E8E0;
+  --palette-4: #EBD9CE;
+  --palette-5: #000000;
 
-  /* Text color uses --white which is now black */
-  color: var(--white);
+  /* Text color */
+  color: #000000;
   background:
-    radial-gradient(circle at top, rgba(145, 145, 145, 0.08), transparent 28%),
+    radial-gradient(circle at top, rgba(233, 195, 170, 0.08), transparent 28%),
     linear-gradient(180deg, var(--palette-1) 0%, var(--palette-2) 100%);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color-scheme: dark;
-  --gold: #d4af37;
-  --gold-2: #f2d27b;
-  --gold-ink: #8b6a17;
-  --black: var(--palette-1);
-  --white: #000000;
-  --soft: rgba(30, 30, 30, 0.85);
-  --shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  color-scheme: light;
+  --gold: #E9C3AA;
+  --gold-2: #F0D5C3;
+  --gold-ink: #A67C52;
+  --black: #000000;
+  --white: #FDF7F4;
+  --soft: #8B7A71;
+  --shadow: 0 16px 40px rgba(107, 91, 82, 0.12);
   --heading: 'Cormorant Garamond', 'Playfair Display', 'Georgia', serif;
   --body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
 }
@@ -40,7 +42,7 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at top, rgba(30,30,30,0.04), transparent 26%),
+    radial-gradient(circle at top, rgba(233, 195, 170, 0.06), transparent 26%),
     linear-gradient(180deg, var(--palette-1) 0%, var(--palette-2) 100%);
 }
 
@@ -49,8 +51,8 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(107, 91, 82, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(107, 91, 82, 0.02) 1px, transparent 1px);
   background-size: 3rem 3rem;
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.4), transparent 92%);
   opacity: 0.2;
@@ -80,6 +82,6 @@ button {
 }
 
 ::selection {
-  background: rgba(212, 175, 55, 0.3);
-  color: var(--white);
+  background: rgba(233, 195, 170, 0.3);
+  color: #000000;
 }

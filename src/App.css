@@ -15,7 +15,7 @@ body, input, button, textarea, select {
   font-family: var(--body);
   font-size: 1rem;
   line-height: 1.68;
-  color: var(--soft);
+  color: #000000;
   -webkit-font-smoothing: antialiased;
   letter-spacing: 0.4px;
 }
@@ -49,7 +49,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #000000;
 }
 
 .eyebrow {
@@ -57,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 500;
-  color: var(--gold);
+  color: #000000;
 }
 
 .button,
@@ -113,11 +113,11 @@ h4 {
   width: 100%;
   padding: 0.55rem 0;
   background:
-    radial-gradient(circle at top, rgba(212, 175, 55, 0.08), transparent 45%),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.86));
+    radial-gradient(circle at top, rgba(233, 195, 170, 0.06), transparent 45%),
+    linear-gradient(180deg, rgba(253, 247, 244, 0.98), rgba(250, 243, 238, 0.96));
   backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.32);
+  border-bottom: 1px solid rgba(233, 195, 170, 0.1);
+  box-shadow: 0 8px 24px rgba(107, 91, 82, 0.08);
 }
 
 .topbar::after {
@@ -127,7 +127,7 @@ h4 {
   right: 0;
   bottom: -1px;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.55) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(233, 195, 170, 0.35) 50%, transparent 100%);
   pointer-events: none;
 }
 
@@ -159,19 +159,19 @@ h4 {
   gap: 0.2rem;
   align-items: center;
   padding: 0.35rem;
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(233, 195, 170, 0.15);
   border-radius: 8px;
   background:
-    radial-gradient(circle at top, rgba(212, 175, 55, 0.10), transparent 52%),
-    linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    radial-gradient(circle at top, rgba(233, 195, 170, 0.08), transparent 52%),
+    linear-gradient(180deg, rgba(107,91,82,0.04), rgba(107,91,82,0.02));
   box-shadow:
-    0 18px 44px rgba(0,0,0,0.28),
-    inset 0 1px 0 rgba(255,255,255,0.06);
+    0 8px 20px rgba(107,91,82,0.06),
+    inset 0 1px 0 rgba(233,195,170,0.08);
 }
 
 .nav-left a,
 .nav-left .active {
-  color: rgba(255, 255, 255, 0.86);
+  color: #000000;
   text-decoration: none;
   padding: 0.65rem 0.95rem;
   border-radius: 6px;
@@ -185,8 +185,8 @@ h4 {
 
 .nav-left a.active,
 .nav-left a:hover {
-  color: var(--white);
-  background: rgba(255,255,255,0.08);
+  color: #000000;
+  background: rgba(233, 195, 170, 0.12);
   transform: translateY(-1px);
 }
 
@@ -236,7 +236,7 @@ h4 {
   text-transform: uppercase;
   padding: 0.45rem 0.7rem;
   border-radius: 999px;
-  color: rgba(255, 255, 255, 0.92);
+  color: #000000;
   background: rgba(0, 0, 0, 0.78);
   border: 1px solid rgba(255, 255, 255, 0.10);
   box-shadow: 0 16px 35px rgba(0, 0, 0, 0.35);
@@ -263,7 +263,7 @@ h4 {
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: linear-gradient(180deg, rgba(0,0,0,0.92), rgba(0,0,0,0.78));
-  color: rgba(255, 255, 255, 0.92);
+  color: #000000;
   box-shadow: 0 18px 44px rgba(0,0,0,0.35);
   backdrop-filter: blur(14px);
   cursor: pointer;
@@ -271,7 +271,7 @@ h4 {
 
 .chat-toggle:hover {
   border-color: rgba(212, 175, 55, 0.45);
-  color: var(--gold);
+  color: #000000;
   transform: translateY(-1px);
 }
 
@@ -285,7 +285,7 @@ h4 {
   border: 1px solid rgba(255,255,255,0.10);
   box-shadow: 0 28px 70px rgba(0,0,0,0.55);
   overflow: hidden;
-  color: #ffffff;
+  color: #000000;
 }
 
 .chat-messages {
@@ -307,14 +307,14 @@ h4 {
 .msg.bot {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.92);
+  color: #000000;
   align-self: flex-start;
 }
 
 .msg.user {
   background: rgba(212, 175, 55, 0.14);
   border: 1px solid rgba(212, 175, 55, 0.22);
-  color: rgba(255,255,255,0.95);
+  color: #000000;
   align-self: flex-end;
 }
 
@@ -333,26 +333,26 @@ h4 {
   border: 1px solid rgba(255,255,255,0.10);
   background: rgba(255,255,255,0.03);
   padding: 0.6rem 0.85rem;
-  color: rgba(255,255,255,0.92);
+  color: #000000;
   outline: none;
 }
 
 .chat-input input::placeholder {
-  color: rgba(255,255,255,0.45);
+  color: #000000;
 }
 
 .chat-input button {
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.12);
   background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.92);
+  color: #000000;
   padding: 0.6rem 0.9rem;
   cursor: pointer;
 }
 
 .chat-input button:hover {
   border-color: rgba(212, 175, 55, 0.45);
-  color: var(--gold);
+  color: #000000;
 }
 
 .voice-avatar {
@@ -368,7 +368,7 @@ h4 {
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: linear-gradient(180deg, rgba(0,0,0,0.92), rgba(0,0,0,0.78));
-  color: rgba(255, 255, 255, 0.92);
+  color: #000000;
   box-shadow: 0 18px 44px rgba(0,0,0,0.35);
   backdrop-filter: blur(14px);
   cursor: pointer;
@@ -376,7 +376,7 @@ h4 {
 
 .voice-toggle:hover {
   border-color: rgba(212, 175, 55, 0.45);
-  color: var(--gold);
+  color: #000000;
   transform: translateY(-1px);
 }
 
@@ -416,7 +416,7 @@ h4 {
 .search-input {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.12);
-  color: rgba(255, 255, 255, 0.92);
+  color: #000000;
   padding: 0.5rem 0.9rem;
   border-radius: 8px;
   width: 10.5rem;
@@ -425,19 +425,19 @@ h4 {
 }
 
 .search-input::placeholder {
-  color: rgba(255, 255, 255, 0.50);
+  color: #000000;
 }
 
 .search-input:focus {
   box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-  border-color: rgba(255,255,255,0.2);
+  border-color: #000000;
   transform: translateY(-2px);
 }
 
 .icon {
   background: transparent;
   border: none;
-  color: rgba(255, 255, 255, 0.86);
+  color: #000000;
   font-size: 1.05rem;
   cursor: pointer;
   position: relative;
@@ -449,7 +449,7 @@ h4 {
 }
 
 .icon:hover {
-  color: var(--gold);
+  color: #000000;
   background: rgba(255,255,255,0.06);
 }
 
@@ -512,7 +512,7 @@ h4 {
   font-family: var(--heading);
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #000000;
   font-size: 0.9rem;
 }
 
@@ -524,6 +524,47 @@ h4 {
   letter-spacing: 0;
   text-transform: none;
   color: inherit;
+}
+
+/* Force all textual content to pure black as requested */
+/* This intentionally uses !important to override any existing color rules */
+body, body * {
+  color: #000000 !important;
+}
+
+/* Also ensure SVG fills, strokes and text-fill are black */
+body, body * {
+  -webkit-text-fill-color: #000000 !important;
+  -moz-text-fill-color: #000000 !important;
+  text-fill-color: #000000 !important;
+  fill: #000000 !important;
+  stroke: #000000 !important;
+}
+
+svg, svg * {
+  fill: #000000 !important;
+  stroke: #000000 !important;
+}
+
+/* Aggressive override: ensure all rendered text appears pure black
+   This disables blending, filters, and opacity for text to maximize contrast. */
+html, body, body *,
+body *::before, body *::after {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  -moz-text-fill-color: #000000 !important;
+  text-fill-color: #000000 !important;
+  fill: #000000 !important;
+  stroke: #000000 !important;
+  mix-blend-mode: normal !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* Exceptions: keep form placeholders readable while still black-colored */
+input::placeholder, textarea::placeholder {
+  color: #000000 !important;
+  opacity: 1 !important;
 }
 
 .brand-mark.logo img {
@@ -542,7 +583,7 @@ h4 {
 .nav-links a,
 .footer-links a,
 .footer-contact a {
-  color: rgba(255, 255, 255, 0.78);
+  color: #000000;
   text-decoration: none;
   transition:
     color 180ms ease,
@@ -552,12 +593,12 @@ h4 {
 .nav-links a:hover,
 .footer-links a:hover,
 .footer-contact a:hover {
-  color: var(--gold);
+  color: #000000;
   transform: translateY(-1px);
 }
 
 .nav-left a.active {
-  color: var(--gold);
+  color: #000000;
   background: rgba(255,255,255,0.1);
 }
 
@@ -576,9 +617,9 @@ main {
   padding: clamp(2rem, 6vw, 4.25rem);
   overflow: visible;
   background:
-    radial-gradient(900px 480px at 12% 36%, rgba(18, 28, 74, 0.42), rgba(0, 0, 0, 0) 56%),
-    radial-gradient(680px 380px at 82% 42%, rgba(212, 175, 55, 0.08), rgba(0, 0, 0, 0) 62%),
-    linear-gradient(120deg, rgba(0, 0, 0, 0.96) 0%, rgba(8, 8, 12, 0.98) 55%, rgba(0, 0, 0, 0.995) 100%);
+    radial-gradient(900px 480px at 12% 36%, rgba(233, 195, 170, 0.12), rgba(0, 0, 0, 0) 56%),
+    radial-gradient(680px 380px at 82% 42%, rgba(233, 195, 170, 0.08), rgba(0, 0, 0, 0) 62%),
+    linear-gradient(120deg, rgba(253, 247, 244, 0.98) 0%, rgba(250, 243, 238, 0.99) 55%, rgba(253, 247, 244, 0.99) 100%);
 }
 
 /* Full-bleed hero on Home (main is width-constrained) */
@@ -606,7 +647,7 @@ main {
   height: 26rem;
   left: -5.5rem;
   top: -5.5rem;
-  background: rgba(18, 28, 74, 0.24);
+  background: rgba(233, 195, 170, 0.12);
 }
 
 .hero-section::after {
@@ -614,12 +655,12 @@ main {
   height: 20rem;
   right: -3.5rem;
   bottom: -3.5rem;
-  background: rgba(212, 175, 55, 0.12);
+  background: rgba(233, 195, 170, 0.08);
 }
 
 .content-section,
 .glass-card {
-  border: 1px solid rgba(113, 113, 113, 0.12);
+  border: 1px solid rgba(233, 195, 170, 0.15);
   box-shadow: var(--shadow);
 }
 
@@ -630,7 +671,7 @@ main {
   transform: none;
   opacity: 1;
   transition: transform 260ms ease, opacity 220ms ease;
-  color: #ffffff;
+  color: #000000;
   border: none;
   box-shadow: none;
   max-width: 680px;
@@ -651,9 +692,9 @@ main {
   width: 100%;
   max-width: 560px;
   height: auto;
-  border-radius: 1rem;
-  box-shadow: 0 28px 80px rgba(0,0,0,0.6), 0 6px 20px rgba(0,0,0,0.45);
-  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 50%;
+  box-shadow: 0 28px 80px rgba(233, 195, 170, 0.25), 0 6px 20px rgba(233, 195, 170, 0.15);
+  border: 1px solid rgba(233, 195, 170, 0.2);
   display: block;
   object-fit: cover;
   transform: translateY(0);
@@ -662,7 +703,7 @@ main {
 
 .hero-visual img:hover {
   transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+  box-shadow: 0 40px 100px rgba(233, 195, 170, 0.3);
 }
 
 .hero-content.is-visible,
@@ -680,7 +721,7 @@ main {
 .eyebrow,
 .section-label {
   margin: 0 0 0.9rem;
-  color: var(--gold);
+  color: #000000;
   text-transform: uppercase;
   letter-spacing: 0.24em;
   font-size: 0.78rem;
@@ -695,7 +736,7 @@ main {
 }
 
 .hero-content h1 {
-  color: #ffffff;
+  color: #000000;
 }
 
 .hero-title {
@@ -717,14 +758,14 @@ main {
 }
 
 .hero-title-white {
-  color: rgba(255, 255, 255, 0.96);
+  color: #3E2A23;
   font-size: clamp(2.2rem, 5.4vw, 4.5rem);
   line-height: 1.02;
   letter-spacing: 0.02em;
 }
 
 .content-section h2 {
-  color: #ffffff;
+  color: #3E2A23;
 }
 
 .hero-content h1 {
@@ -736,7 +777,7 @@ main {
 .hero-tagline {
   margin: 1.2rem 0 0;
   font-size: clamp(1rem, 1.7vw, 1.2rem);
-  color: rgba(255, 255, 255, 0.84);
+  color: #8B7A71;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -756,12 +797,12 @@ main {
 .content-section .section-heading p,
 .content-section .form-note,
 .content-section label {
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(107, 91, 82, 0.78);
 }
 
 .content-section .filters-search,
 .content-section .filters-actions select {
-  color: rgba(255, 255, 255, 0.88);
+  color: #000000;
 }
 
 .content-section .filters-actions select option {
@@ -769,11 +810,11 @@ main {
 }
 
 .content-section .button-secondary {
-  color: #ffffff;
+  color: #000000;
 }
 
 .hero-content .hero-copy {
-  color: rgba(255, 255, 255, 0.78);
+  color: #000000;
 }
 
 .hero-content .eyebrow {
@@ -813,7 +854,7 @@ main {
 .hero-section .button-secondary {
   background: transparent;
   border-color: transparent;
-  color: rgba(255, 255, 255, 0.84);
+  color: #000000;
   text-decoration: none;
   position: relative;
 }
@@ -841,18 +882,31 @@ main {
 .testimonial-grid {
   display: grid;
   gap: 1.25rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .product-card {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+  background: rgba(250, 243, 238, 0.6);
+  border-radius: 1.5rem;
+  padding: 1rem;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(233, 195, 170, 0.15);
 }
 
 .product-image-wrap {
   width: 100%;
   display: block;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(240, 213, 195, 0.2), rgba(233, 195, 170, 0.1));
 }
 
 .product-photo {
@@ -1011,16 +1065,17 @@ main {
 }
 
 .button-primary {
-  color: var(--white);
-  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-2) 100%);
-  border: 1px solid rgba(0, 0, 0, 0.14);
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45);
+  color: #FDF7F4;
+  background: #6B5B52;
+  border: 1px solid #6B5B52;
+  box-shadow: 0 8px 24px rgba(107, 91, 82, 0.2);
 }
 
 .button-secondary {
-  color: var(--white);
-  border-color: rgba(212, 175, 55, 0.28);
-  background: rgba(0, 0, 0, 0.14);
+  color: #000000;
+  border-color: #E9C3AA;
+  background: transparent;
+  border: 2px solid #E9C3AA;
 }
 
 .button-small {
@@ -1062,7 +1117,7 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(0.8) contrast(0.98) brightness(0.95);
+  filter: none;
 }
 
 .hero-visual img {
@@ -1081,7 +1136,7 @@ main {
   margin-top: 1.5rem;
   padding: clamp(1.4rem, 4vw, 3rem);
   border-radius: 2rem;
-  background: linear-gradient(180deg, rgba(18, 18, 18, 0.96), rgba(8, 8, 8, 0.96));
+  background: rgba(250, 243, 238, 0.6);
   opacity: 1;
   transform: none;
   transition: none;
@@ -1237,13 +1292,13 @@ main {
 
 .about-page,
 .about-page .content-section {
-  color: #ffffff;
+  color: #000000;
 }
 
 .about-page .content-section h2,
 .about-page .section-copy h2,
 .about-page .section-heading h2 {
-  color: #ffffff;
+  color: #000000;
 }
 
 .about-page .section-copy p,
@@ -1251,13 +1306,13 @@ main {
 .about-page .about-stat-copy,
 .about-page .about-value-card p,
 .about-page .about-faq-item p {
-  color: rgba(255, 255, 255, 0.78);
+  color: #000000;
 }
 
 .about-page .about-faq-item summary,
 .about-page .about-stat-value,
 .about-page .about-value-card h3 {
-  color: #ffffff;
+  color: #000000;
 }
 
 .about-highlights .about-stat h3,
@@ -1280,7 +1335,7 @@ main {
 .about-highlights .glass-card,
 .about-values .glass-card,
 .about-faq .glass-card {
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: #000000;
 }
 
 .product-grid,
@@ -1292,12 +1347,12 @@ main {
 }
 
 .product-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.2rem;
 }
 
 .products-page .product-grid {
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .products-page .product-card {
@@ -1345,7 +1400,7 @@ main {
 .collections-section .collection-card h3 { margin:0 0 0.4rem; color: var(--white) }
 .collections-section .collection-card .button-secondary { border-color: rgba(255,255,255,0.22) }
 
-.featured-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:1.25rem; margin-top:1rem }
+.featured-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:1.25rem; margin-top:1rem }
 
 .featured-products .product-headline span { opacity: 0.82; }
 
@@ -1416,13 +1471,13 @@ main {
 }
 
 .newsletter-content h2 {
-  color: #ffffff;
+  color: #000000;
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   margin-bottom: 1rem;
 }
 
 .newsletter-content p {
-  color: rgba(255, 255, 255, 0.78);
+  color: #000000;
   max-width: 60ch;
   margin: 0 auto 1.5rem;
 }
@@ -1443,13 +1498,13 @@ main {
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.92);
+  color: #000000;
   outline: none;
   transition: all 180ms ease;
 }
 
 .newsletter-input::placeholder {
-  color: rgba(255, 255, 255, 0.45);
+  color: #000000;
 }
 
 .newsletter-input:focus {
@@ -1467,13 +1522,13 @@ main {
 }
 
 .cta-content h2 {
-  color: #ffffff;
+  color: #000000;
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   margin-bottom: 1rem;
 }
 
 .cta-content p {
-  color: rgba(255, 255, 255, 0.78);
+  color: #000000;
   max-width: 60ch;
   margin: 0 auto 2rem;
   font-size: 1.05rem;
@@ -1484,15 +1539,15 @@ main {
 }
 
 .why-us-section h2 {
-  color: #ffffff;
+  color: #000000;
 }
 
 .story-section .section-copy {
-  color: rgba(255, 255, 255, 0.88);
+  color: #000000;
 }
 
 .story-section .section-copy h2 {
-  color: #ffffff;
+  color: #000000;
 }
 
 .story-section .section-copy p {
@@ -1514,7 +1569,7 @@ main {
 }
 
 .testimonials-section h2 {
-  color: #ffffff;
+  color: #000000;
 }
 
 .product-card,
@@ -1545,7 +1600,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  color: #ffffff;
+  color: #000000;
 }
 
 .cart-drawer.open {
@@ -1589,7 +1644,7 @@ main {
 .cart-drawer .button,
 .cart-drawer .button-secondary,
 .cart-drawer .button-primary {
-  color: #ffffff;
+  color: #000000;
 }
 
 .cart-empty { padding:1.2rem 0; display:flex; flex-direction:column; gap:1rem; align-items:flex-start }
@@ -1603,7 +1658,7 @@ main {
 .ci-price { font-size:0.9rem; margin-top:0.2rem; opacity:0.82 }
 .remove-link { background:transparent; border:none; color:var(--gold); cursor:pointer; padding:0; font-size:0.85rem }
 .ci-qty { display:inline-flex; align-items:center; gap:0.45rem; border:1px solid rgba(255,255,255,0.08); border-radius:999px; padding:0.2rem }
-.qty { background:transparent; border:none; color:#ffffff; padding:0.25rem 0.55rem; border-radius:999px; cursor:pointer }
+.qty { background:transparent; border:none; color: #000000; padding:0.25rem 0.55rem; border-radius:999px; cursor:pointer }
 .qty:hover { background: rgba(255,255,255,0.08) }
 .qty-value { min-width:26px; text-align:center }
 .cart-summary { display:flex; flex-direction:column; gap:0.45rem; padding:0.9rem 0; border-top:1px solid rgba(255,255,255,0.08); border-bottom:1px solid rgba(255,255,255,0.08) }
@@ -1616,7 +1671,7 @@ main {
 .cart-footer { display:flex; gap:0.6rem; justify-content:space-between; margin-top:auto; padding-top:0.2rem }
 
 .cart-drawer .button-secondary {
-  border-color: rgba(255,255,255,0.28);
+  border-color: #000000;
   background: rgba(255,255,255,0.04);
 }
 
@@ -1719,7 +1774,7 @@ body.cart-open {
 }
 
 .product-headline span {
-  color: var(--gold);
+  color: #000000;
   font-weight: 700;
 }
 
@@ -1731,17 +1786,17 @@ body.cart-open {
 
 .product-body p {
   margin: 0.9rem 0 1.2rem;
-  color: rgba(255, 255, 255, 0.78);
+  color: #000000;
 }
 
 .product-card .button,
 .product-card .button-primary,
 .product-card .button-secondary {
-  color: #ffffff;
+  color: #000000;
 }
 
 .product-card .button-secondary {
-  border-color: rgba(255,255,255,0.24);
+  border-color: #000000;
 }
 
 .product-card .button-primary {
@@ -1760,15 +1815,15 @@ body.cart-open {
 .product-detail-copy .button,
 .product-detail-copy .button-primary,
 .product-detail-copy .button-secondary {
-  color: #ffffff;
+  color: #000000;
 }
 
 .product-detail-copy .section-label {
-  color: var(--gold);
+  color: #000000;
 }
 
 .product-detail-copy .button-secondary {
-  border-color: rgba(255,255,255,0.24);
+  border-color: #000000;
 }
 
 .product-detail-copy .button-primary {
@@ -1791,7 +1846,7 @@ body.cart-open {
 
 .feature-icon,
 .quote-mark {
-  color: var(--gold);
+  color: #000000;
 }
 
 .feature-icon {
@@ -1837,7 +1892,7 @@ body.cart-open {
   border-radius: 1rem;
   padding: 0.95rem 1rem;
   background: rgba(255, 255, 255, 0.03);
-  color: rgba(255, 255, 255, 0.92);
+  color: #000000;
   font: inherit;
   outline: none;
   transition:
@@ -1847,7 +1902,7 @@ body.cart-open {
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+  color: #000000;
 }
 
 .contact-form input:focus,
@@ -1867,11 +1922,11 @@ body.cart-open {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-  color: #ffffff;
+  color: #000000;
   background:
-    radial-gradient(circle at top left, rgba(212, 175, 55, 0.08), transparent 28%),
-    linear-gradient(180deg, #080808 0%, #000000 100%);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+    radial-gradient(circle at top left, rgba(233, 195, 170, 0.08), transparent 28%),
+    linear-gradient(180deg, #FDF7F4 0%, #FAF3EE 100%);
+  border-top: 1px solid rgba(233, 195, 170, 0.15);
 }
 
 .footer-content {
@@ -1901,7 +1956,7 @@ body.cart-open {
 }
 
 .footer-tagline {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(107, 91, 82, 0.75);
   font-size: 0.95rem;
   line-height: 1.7;
   margin: 0;
@@ -1916,7 +1971,7 @@ body.cart-open {
   font-weight: 500;
   letter-spacing: -0.2px;
   text-transform: capitalize;
-  color: var(--gold);
+  color: #000000;
   margin: 0 0 0.8rem;
 }
 
@@ -1934,7 +1989,7 @@ body.cart-open {
 }
 
 .footer-links a {
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(107, 91, 82, 0.78);
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 400;
@@ -1943,18 +1998,18 @@ body.cart-open {
 }
 
 .footer-links a:hover {
-  color: var(--gold);
+  color: #000000;
   transform: translateX(4px);
 }
 
 .footer p {
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(107, 91, 82, 0.78);
   margin: 0;
   font-weight: 400;
 }
 
 .footer a {
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(107, 91, 82, 0.82);
   text-decoration: none;
 }
 
@@ -1974,7 +2029,7 @@ body.cart-open {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(212, 175, 55, 0.24);
   border-radius: 12px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #000000;
   transition: all 0.3s ease;
 }
 
@@ -1988,7 +2043,7 @@ body.cart-open {
 
 .footer-social a:hover {
   background: rgba(212, 175, 55, 0.16);
-  color: var(--gold);
+  color: #000000;
   border-color: rgba(212, 175, 55, 0.5);
   transform: translateY(-2px);
 }
@@ -2007,7 +2062,7 @@ body.cart-open {
 
 .footer-bottom p {
   margin: 0;
-  color: rgba(255, 255, 255, 0.65);
+  color: #000000;
   font-size: 0.85rem;
   font-weight: 400;
   letter-spacing: 0.2px;
@@ -2021,7 +2076,7 @@ body.cart-open {
 }
 
 .footer-legal a {
-  color: rgba(255, 255, 255, 0.65);
+  color: #000000;
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 400;
@@ -2030,11 +2085,11 @@ body.cart-open {
 }
 
 .footer-legal a:hover {
-  color: var(--gold);
+  color: #000000;
 }
 
 .footer-legal span {
-  color: rgba(255, 255, 255, 0.25);
+  color: #000000;
 }
 
 @media (max-width: 900px) {
@@ -2067,12 +2122,12 @@ body.cart-open {
 
 .collection-hero-content h1 {
   font-size: clamp(2.2rem, 4vw, 3.6rem);
-  color: #ffffff;
+  color: #000000;
   margin-bottom: 1rem;
 }
 
 .collection-hero-content p {
-  color: rgba(255, 255, 255, 0.78);
+  color: #000000;
   max-width: 70ch;
   margin: 0 auto;
   font-size: 1.05rem;
@@ -2122,13 +2177,13 @@ body.cart-open {
 }
 
 .collection-type-card h3 {
-  color: #ffffff;
+  color: #000000;
   margin: 0 0 0.6rem;
   font-size: 1.2rem;
 }
 
 .collection-type-card p {
-  color: rgba(255, 255, 255, 0.72);
+  color: #000000;
   margin: 0;
   font-size: 0.95rem;
 }
@@ -2137,12 +2192,12 @@ body.cart-open {
   margin-top: 0.9rem;
   font-size: 0.9rem;
   letter-spacing: 0.2px;
-  color: rgba(255, 255, 255, 0.82);
+  color: #000000;
   transition: color 220ms ease;
 }
 
 .collection-type-card:hover .type-cta {
-  color: var(--gold);
+  color: #000000;
 }
 
 .collection-type-card.selected {
@@ -2157,7 +2212,7 @@ body.cart-open {
 
 .products-info {
   margin: 1.5rem 0 1rem;
-  color: rgba(255, 255, 255, 0.72);
+  color: #000000;
   font-size: 0.95rem;
 }
 
@@ -2165,7 +2220,7 @@ body.cart-open {
   grid-column: 1 / -1;
   text-align: center;
   padding: 2rem;
-  color: rgba(255, 255, 255, 0.72);
+  color: #000000;
 }
 
 .collection-price-guide {
@@ -2193,12 +2248,12 @@ body.cart-open {
 .price-count {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--gold);
+  color: #000000;
   margin-bottom: 0.8rem;
 }
 
 .price-label {
-  color: rgba(255, 255, 255, 0.82);
+  color: #000000;
   margin: 0;
   font-weight: 600;
 }
@@ -2211,13 +2266,13 @@ body.cart-open {
 }
 
 .collection-cta-content h2 {
-  color: #ffffff;
+  color: #000000;
   font-size: clamp(1.6rem, 3vw, 2.4rem);
   margin-bottom: 1rem;
 }
 
 .collection-cta-content p {
-  color: rgba(255, 255, 255, 0.78);
+  color: #000000;
   max-width: 60ch;
   margin: 0 auto 1.5rem;
 }
@@ -2265,7 +2320,7 @@ body.cart-open {
 .channel-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
-  color: var(--gold);
+  color: #000000;
 }
 
 .channel-icon {
@@ -2274,13 +2329,13 @@ body.cart-open {
 }
 
 .channel-card h3 {
-  color: #ffffff;
+  color: #000000;
   margin: 0 0 0.6rem;
   font-size: 1.15rem;
 }
 
 .channel-card p {
-  color: rgba(255, 255, 255, 0.72);
+  color: #000000;
   margin: 0;
   font-size: 0.95rem;
 }
@@ -2297,7 +2352,7 @@ body.cart-open {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.88);
+  color: #000000;
   font-weight: 500;
 }
 
@@ -2307,7 +2362,7 @@ body.cart-open {
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.03);
-  color: rgba(255, 255, 255, 0.92);
+  color: #000000;
   outline: none;
   transition: all 180ms ease;
   font-family: inherit;
@@ -2315,7 +2370,7 @@ body.cart-open {
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: rgba(255, 255, 255, 0.45);
+  color: #000000;
 }
 
 .contact-form input:focus,
@@ -2342,30 +2397,30 @@ body.cart-open {
 }
 
 .location-card h3 {
-  color: #ffffff;
+  color: #000000;
   margin: 0 0 1rem;
   font-size: 1.2rem;
 }
 
 .location-address {
-  color: rgba(255, 255, 255, 0.72);
+  color: #000000;
   margin: 0 0 1rem;
   line-height: 1.6;
   font-size: 0.95rem;
 }
 
 .location-detail {
-  color: rgba(255, 255, 255, 0.72);
+  color: #000000;
   margin: 0.6rem 0;
   font-size: 0.9rem;
 }
 
 .location-detail strong {
-  color: rgba(255, 255, 255, 0.88);
+  color: #000000;
 }
 
 .location-detail a {
-  color: var(--gold);
+  color: #000000;
   text-decoration: none;
   transition: opacity 180ms ease;
 }
@@ -2416,7 +2471,7 @@ body.cart-open {
 }
 
 .social-link-card p {
-  color: rgba(255, 255, 255, 0.88);
+  color: #000000;
   margin: 0;
   font-weight: 600;
   font-size: 0.95rem;
@@ -2441,7 +2496,7 @@ body.cart-open {
 
 .faq-item summary {
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.92);
+  color: #000000;
   list-style: none;
   user-select: none;
 }
@@ -2463,7 +2518,7 @@ body.cart-open {
 }
 
 .faq-item p {
-  color: rgba(255, 255, 255, 0.72);
+  color: #000000;
   margin: 0.85rem 0 0;
   line-height: 1.6;
 }
@@ -2481,13 +2536,13 @@ body.cart-open {
 }
 
 .newsletter-card h2 {
-  color: #ffffff;
+  color: #000000;
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   margin-bottom: 1rem;
 }
 
 .newsletter-card p {
-  color: rgba(255, 255, 255, 0.78);
+  color: #000000;
   max-width: 60ch;
   margin: 0 auto 1.5rem;
 }
@@ -2522,20 +2577,20 @@ body.cart-open {
 }
 
 .timeline-year {
-  color: var(--gold);
+  color: #000000;
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
 .timeline-content h3 {
-  color: #ffffff;
+  color: #000000;
   margin: 0 0 0.6rem;
   font-size: 1.15rem;
 }
 
 .timeline-content p {
-  color: rgba(255, 255, 255, 0.72);
+  color: #000000;
   margin: 0;
   font-size: 0.95rem;
 }
@@ -2602,13 +2657,13 @@ body.cart-open {
 }
 
 .team-member h3 {
-  color: #ffffff;
+  color: #000000;
   margin: 0 0 0.3rem;
   font-size: 1.1rem;
 }
 
 .member-role {
-  color: var(--gold);
+  color: #000000;
   font-size: 0.85rem;
   margin: 0 0 0.8rem;
   letter-spacing: 0.06em;
@@ -2616,7 +2671,7 @@ body.cart-open {
 }
 
 .member-bio {
-  color: rgba(255, 255, 255, 0.72);
+  color: #000000;
   margin: 0;
   font-size: 0.9rem;
   line-height: 1.6;
@@ -2643,13 +2698,13 @@ body.cart-open {
 }
 
 .commitment-card h3 {
-  color: #ffffff;
+  color: #000000;
   margin: 0 0 0.8rem;
   font-size: 1.15rem;
 }
 
 .commitment-card p {
-  color: rgba(255, 255, 255, 0.72);
+  color: #000000;
   margin: 0;
   font-size: 0.9rem;
   line-height: 1.6;
@@ -4090,7 +4145,7 @@ body.cart-open {
 .testimonial-card,
 .product-card,
 .footer {
-  color: #ffffff;
+  color: #000000;
 }
 
 /* Ensure home page dark sections explicitly white */
@@ -4099,7 +4154,39 @@ body.cart-open {
 .home-page .cta-section,
 .home-page .testimonial-card,
 .home-page .newsletter-section {
-  color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Home page: force light-theme typography (avoid global dark-section whites) */
+.home-page :where(h1, h2, h3, h4, h5, h6, p, li, a, strong, span, small, label, summary) {
+  color: #000000 !important;
+}
+
+.home-page .glass-card,
+.home-page .product-card,
+.home-page .feature-card,
+.home-page .testimonial-card,
+.home-page .cert-card {
+  color: #000000 !important;
+}
+
+.home-page :where(input, textarea, select, button) {
+  color: #000000 !important;
+}
+
+.home-page :where(input::placeholder, textarea::placeholder) {
+  color: rgba(0, 0, 0, 0.62) !important;
+}
+
+.home-page .footer a,
+.home-page .footer p,
+.home-page .footer span,
+.home-page .footer li {
+  color: #000000 !important;
+}
+
+.home-page .content-section .button-secondary {
+  color: #000000 !important;
 }
 
 /* AI Finder Section */
@@ -4121,13 +4208,13 @@ body.cart-open {
 .stat-number {
   font-size: 2.4rem;
   font-weight: 700;
-  color: var(--gold);
+  color: #000000;
   margin-bottom: 0.5rem;
 }
 
 .stat-label {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.78);
+  color: #000000;
 }
 
 /* Clinical Stats Section */
@@ -4147,13 +4234,13 @@ body.cart-open {
   font-family: var(--heading);
   font-size: 2.2rem;
   font-weight: 500;
-  color: var(--gold);
+  color: #000000;
   margin-bottom: 0.8rem;
   letter-spacing: -0.3px;
 }
 
 .clinical-card p {
-  color: rgba(255, 255, 255, 0.78);
+  color: #000000;
   font-size: 0.95rem;
   line-height: 1.68;
   letter-spacing: 0.2px;
@@ -4182,7 +4269,7 @@ body.cart-open {
 }
 
 .cert-card p {
-  color: rgba(255, 255, 255, 0.88);
+  color: #000000;
   font-weight: 600;
   margin: 0;
 }
@@ -4206,24 +4293,24 @@ body.cart-open {
   font-size: 0.85rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #000000;
   margin: 0 0 0.5rem 0;
 }
 
 .promo-content h2 {
   font-size: clamp(1.4rem, 3vw, 2rem);
-  color: #ffffff;
+  color: #000000;
   margin: 0 0 0.5rem 0;
 }
 
 .promo-text p {
-  color: rgba(255, 255, 255, 0.78);
+  color: #000000;
   margin: 0;
   font-size: 0.95rem;
 }
 
 .promo-text strong {
-  color: var(--gold);
+  color: #000000;
 }
 
 .content-section h1,
@@ -4255,12 +4342,12 @@ body.cart-open {
   color: #000000;
 }
 
-/* Ensure sufficient contrast: make dark cards slightly deeper */
+/* Ensure sufficient contrast: light background with subtle shading */
 .glass-card,
 .content-section {
-  background-color: rgba(8,8,8,0.95);
+  background-color: rgba(250, 243, 238, 0.6);
 }
 
 /* Utility classes for explicit overrides */
-.bg-dark { color: #ffffff; }
+.bg-dark { color: #000000; }
 .bg-light { color: #000000; }

@@ -1,16 +1,13 @@
 import { Link } from 'react-router-dom'
 import { useCart } from '../contexts/CartContext'
+import SafeImage from './SafeImage'
 
 export default function ProductCard({ perfume }) {
   const { addItem } = useCart()
   return (
     <article className="product-card glass-card">
       <div className="product-image-wrap">
-        <picture>
-          {/* Prefer photographic JPGs (or WebP if available), fall back to SVG placeholder */}
-          <source srcSet={perfume.image.replace(/\.jpg$|\.png$|\.svg$/i, '.webp')} type="image/webp" />
-          <img className="product-photo" src={perfume.image} alt={perfume.name} onError={(e) => (e.currentTarget.src = '/ai-images/ai-placeholder.svg')} />
-        </picture>
+        <SafeImage className="product-photo" src={perfume.image} alt={perfume.name} />
       </div>
       <div className="product-body">
         <div className="product-headline">

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ai from '../data/aiContent'
 import PageTransition from '../components/PageTransition'
+import SafeImage from '../components/SafeImage'
 
 export default function About() {
   useEffect(() => {
@@ -69,7 +70,12 @@ export default function About() {
     <PageTransition className="page about-page">
       <section className="content-section split-layout">
         <motion.div className="section-media glass-card" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-          <img src="https://cdn.shopify.com/s/files/1/0629/1154/5552/files/perfume-bottles-surrounded-by-flowers_480x480.jpg?v=1723280049" alt="Perfume bottles surrounded by flowers" loading="lazy" />
+          <SafeImage
+            src="https://cdn.shopify.com/s/files/1/0629/1154/5552/files/perfume-bottles-surrounded-by-flowers_480x480.jpg?v=1723280049"
+            fallbackSrc="/images/about-luxury.svg"
+            alt="Perfume bottles surrounded by flowers"
+            loading="lazy"
+          />
         </motion.div>
         <motion.div className="section-copy" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
           <p className="section-label">Our Story</p>
@@ -183,7 +189,7 @@ export default function About() {
             >
                   <div className="member-avatar">
                 {member.image ? (
-                  <img src={member.image} alt={member.name} loading="lazy" />
+                  <SafeImage src={member.image} fallbackSrc="/ai-images/ai-placeholder.svg" alt={member.name} loading="lazy" />
                 ) : (
                   <div className="avatar-placeholder">{member.name.charAt(0)}</div>
                 )}

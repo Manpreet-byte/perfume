@@ -6,6 +6,7 @@ import perfumes from '../data/perfumes'
 import images from '../data/images'
 import PageTransition from '../components/PageTransition'
 import ProductCard from '../components/ProductCard'
+import SafeImage from '../components/SafeImage'
 
 export default function Home() {
   const [newsletterEmail, setNewsletterEmail] = useState('')
@@ -78,7 +79,12 @@ export default function Home() {
           </div>
         </motion.div>
         <motion.div className="hero-visual" style={{ y }} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.1 }}>
-          <img src="https://media.istockphoto.com/id/1326570912/photo/glass-bottle-of-perfume-on-golden-silk-background.jpg?s=612x612&w=0&k=20&c=rZwmd4ks8TjmgKOlkVJqb1_A2o-44y2lDYCgo8vk_1c=" alt="Perfume bottle" loading="eager" />
+          <SafeImage
+            src="https://media.istockphoto.com/id/1326570912/photo/glass-bottle-of-perfume-on-golden-silk-background.jpg?s=612x612&w=0&k=20&c=rZwmd4ks8TjmgKOlkVJqb1_A2o-44y2lDYCgo8vk_1c="
+            fallbackSrc="/images/hero-luxury.svg"
+            alt="Perfume bottle"
+            loading="eager"
+          />
         </motion.div>
       </section>
 
@@ -106,7 +112,7 @@ export default function Home() {
           {features.map((feature, idx) => (
             <motion.article key={idx} className="feature-card glass-card" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.1 }} viewport={{ once: true }}>
               <div className="feature-icon" aria-hidden="true">
-                {feature.image ? <img src={feature.image} alt={feature.title} loading="lazy" /> : null}
+                {feature.image ? <SafeImage src={feature.image} alt="" aria-hidden="true" loading="lazy" /> : null}
               </div>
               <h3>{feature.title}</h3>
               <p>{feature.description}</p>
@@ -127,7 +133,7 @@ export default function Home() {
             </div>
           </motion.div>
           <motion.div className="section-media" initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
-            <img src={images[3] || '/images/tf-black-orchid.jpg'} alt="Perfume bottle on a dark background" loading="lazy" />
+            <SafeImage src={images[3] || '/images/tf-black-orchid.jpg'} fallbackSrc="/images/tf-black-orchid.jpg" alt="Perfume bottle on a dark background" loading="lazy" />
           </motion.div>
         </div>
       </section>

@@ -5,6 +5,7 @@ import ai from '../data/aiContent'
 import perfumes from '../data/perfumes'
 import PageTransition from '../components/PageTransition'
 import { useCart } from '../contexts/CartContext'
+import SafeImage from '../components/SafeImage'
 
 export default function ProductDetail() {
   const { slug } = useParams()
@@ -26,10 +27,7 @@ export default function ProductDetail() {
     <PageTransition className="page product-detail-page">
       <section className="content-section split-layout product-detail-layout">
         <motion.div className="section-media glass-card product-detail-visual" initial={{ opacity: 0, x: -18 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-          <picture>
-            <source srcSet={perfume.image.replace(/\.jpg$|\.png$|\.svg$/i, '.webp')} type="image/webp" />
-            <img src={perfume.image} alt={perfume.name} onError={(e) => (e.currentTarget.src = '/ai-images/ai-placeholder.svg')} />
-          </picture>
+          <SafeImage src={perfume.image} alt={perfume.name} />
         </motion.div>
 
         <motion.div className="section-copy product-detail-copy" initial={{ opacity: 0, x: 18 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.05 }}>
