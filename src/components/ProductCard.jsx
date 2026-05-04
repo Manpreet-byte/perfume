@@ -18,7 +18,7 @@ export default function ProductCard({ perfume }) {
           <span>{perfume.price}</span>
         </div>
         <p>{perfume.shortDescription}</p>
-        <div style={{display: 'flex', gap: '0.6rem'}}>
+        <div className="product-actions">
           <Link className="button button-primary button-small" to={`/collection/${perfume.slug}`}>
             View Details
           </Link>

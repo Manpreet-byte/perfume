@@ -30,6 +30,39 @@ export default function About() {
     { q: 'How long do your fragrances last?', a: 'Longevity depends on skin type and climate, but our blends are designed to project cleanly and wear beautifully throughout the day.' },
     { q: 'Are your perfumes unisex?', a: 'Yes. We design by mood and character, not gender—choose the scent that feels most like you.' },
     { q: 'How should I store my perfume?', a: 'Keep bottles away from direct sunlight and heat. A cool, dry place helps preserve the top notes and overall clarity.' },
+    { q: 'Do you offer samples?', a: 'Yes! Sample sets and discovery kits are available. Perfect for finding your signature scent before committing to a full bottle.' },
+    { q: 'Are your fragrances vegan and cruelty-free?', a: 'Yes. All our fragrances are 100% vegan and never tested on animals. We partner with ethical suppliers.' },
+    { q: "What's your return policy?", a: 'We offer 30-day returns on unopened products. Opened fragrances can be exchanged within 14 days if unsatisfied.' },
+  ]
+
+  const timeline = [
+    { year: '2018', title: 'The Beginning', desc: 'Golden River was founded by a collective of master perfumers with 50+ years of combined expertise.' },
+    { year: '2019', title: 'First Launch', desc: 'Debuted with 6 signature collections, each designed to evoke emotion and memory.' },
+    { year: '2021', title: 'Sustainability Focus', desc: 'Transitioned to 100% recyclable packaging and ethical ingredient sourcing.' },
+    { year: '2023', title: 'Global Reach', desc: 'Expanded to 15+ countries with boutique retailers and online presence.' },
+    { year: '2024', title: 'Awards Recognition', desc: 'Received "Best Indie Fragrance Brand" from International Perfume Society.' },
+    { year: '2025', title: 'Innovation', desc: 'Launched bespoke fragrance creation service and limited-edition collaborations.' },
+  ]
+
+  const team = [
+    {
+      name: 'Aisha Patel',
+      role: 'Master Perfumer & Founder',
+      bio: '30 years in luxury fragrance, trained in Grasse.',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5yyAZTQqTzX_FtrCl6WjmI57C31cYROwTzQ&s',
+    },
+    {
+      name: 'Ravi Singh',
+      role: 'Head of Sourcing',
+      bio: 'Ethical supplier relationships across 20+ countries.',
+      image: 'https://cmscritic.com/ms-content/uploads/2025/12/ravi-singh.jpg',
+    },
+    {
+      name: 'Sophia Desai',
+      role: 'Creative Director',
+      bio: 'Brand storyteller and packaging innovator.',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQGI9T81_J7epg/profile-displayphoto-scale_200_200/B56ZnVJzEbI0AY-/0/1760217740762?e=2147483647&v=beta&t=EaO8VDf99KX77aMQ0DMS1SiuV9Ng8Xm0KG8a3tu4hL8',
+    },
   ]
 
   return (
@@ -105,6 +138,82 @@ export default function About() {
               <p>{v.copy}</p>
             </motion.article>
           ))}
+        </div>
+      </section>
+
+      <section className="content-section about-timeline">
+        <div className="section-heading">
+          <p className="section-label">Timeline</p>
+          <h2>Our journey so far</h2>
+        </div>
+        <div className="timeline-container">
+          {timeline.map((item, idx) => (
+            <motion.div
+              key={item.year}
+              className="timeline-item glass-card"
+              initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.55, delay: idx * 0.08 }}
+            >
+              <div className="timeline-year">{item.year}</div>
+              <div className="timeline-content">
+                <h4>{item.title}</h4>
+                <p>{item.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <section className="content-section about-team">
+        <div className="section-heading">
+          <p className="section-label">People</p>
+          <h2>Meet the craftspeople behind Golden River</h2>
+        </div>
+        <div className="team-grid">
+          {team.map((member, idx) => (
+            <motion.article
+              key={member.name}
+              className="glass-card team-member"
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.55, delay: idx * 0.08 }}
+            >
+                  <div className="member-avatar">
+                {member.image ? (
+                  <img src={member.image} alt={member.name} loading="lazy" />
+                ) : (
+                  <div className="avatar-placeholder">{member.name.charAt(0)}</div>
+                )}
+                  </div>
+              <h3>{member.name}</h3>
+              <p className="member-role">{member.role}</p>
+              <p className="member-bio">{member.bio}</p>
+            </motion.article>
+          ))}
+        </div>
+      </section>
+
+      <section className="content-section about-commitment">
+        <div className="section-heading">
+          <p className="section-label">Our Commitment</p>
+          <h2>Sustainability & Ethics</h2>
+        </div>
+        <div className="commitment-grid">
+          <motion.div className="commitment-card glass-card" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <h3>🌱 Sustainable Sourcing</h3>
+            <p>We partner with farmers and suppliers who practice sustainable agriculture and fair trade. Every ingredient is traceable and responsibly harvested.</p>
+          </motion.div>
+          <motion.div className="commitment-card glass-card" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
+            <h3>♻️ Zero Waste Packaging</h3>
+            <p>100% recyclable bottles and packaging. We're working towards carbon neutrality by 2026 and offset all shipping emissions.</p>
+          </motion.div>
+          <motion.div className="commitment-card glass-card" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
+            <h3>💚 Community Support</h3>
+            <p>1% of all profits go to environmental conservation projects and fragrance education programs in underserved communities.</p>
+          </motion.div>
         </div>
       </section>
 

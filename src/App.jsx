@@ -12,6 +12,10 @@ import Chatbot from './components/Chatbot'
 import VoiceAvatar from './components/VoiceAvatar'
 import CartDrawer from './components/CartDrawer'
 import { CartProvider, useCart } from './contexts/CartContext'
+import instagramLogo from './assets/logos/instagram.svg'
+import facebookLogo from './assets/logos/facebook.svg'
+import tiktokLogo from './assets/logos/tiktok.svg'
+import youtubeLogo from './assets/logos/youtube.svg'
 
 function AnimatedRoutes() {
   const location = useLocation()
@@ -86,21 +90,63 @@ export default function App() {
           <AnimatedRoutes />
 
           <footer className="footer">
-            <div>
-              <div className="brand-mark footer-brand">Golden River Perfumes</div>
-              <p>Luxury fragrances with a modern, minimal sensibility.</p>
+            <div className="footer-content">
+              <div className="footer-column footer-brand-col">
+                <div className="brand-mark footer-brand">Golden River Perfumes</div>
+                <p className="footer-tagline">Luxury fragrances with a modern, minimal sensibility.</p>
+                <div className="footer-social" aria-label="Social links">
+                  <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+                    <img src={instagramLogo} alt="" aria-hidden="true" />
+                  </a>
+                  <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
+                    <img src={facebookLogo} alt="" aria-hidden="true" />
+                  </a>
+                  <a href="https://tiktok.com" target="_blank" rel="noreferrer" aria-label="TikTok">
+                    <img src={tiktokLogo} alt="" aria-hidden="true" />
+                  </a>
+                  <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube">
+                    <img src={youtubeLogo} alt="" aria-hidden="true" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="footer-column">
+                <h4 className="footer-col-title">Shop</h4>
+                <ul className="footer-links">
+                  <li><a href="#/collection">Browse Collection</a></li>
+                  <li><a href="#/collection">Best Sellers</a></li>
+                  <li><a href="#/collection">Gift Sets</a></li>
+                  <li><a href="#/collection">New Arrivals</a></li>
+                </ul>
+              </div>
+
+              <div className="footer-column">
+                <h4 className="footer-col-title">Support</h4>
+                <ul className="footer-links">
+                  <li><a href="#/contact">Contact Us</a></li>
+                  <li><a href="#shipping">Shipping & Returns</a></li>
+                  <li><a href="#track">Track Order</a></li>
+                  <li><a href="#privacy">Privacy Policy</a></li>
+                </ul>
+              </div>
+
+              <div className="footer-column footer-contact">
+                <h4 className="footer-col-title">Contact</h4>
+                <a href="mailto:hello@goldenriverperfume.com">hello@goldenriverperfume.com</a>
+                <a href="tel:+911234567890">+91 12345 67890</a>
+                <p>Visit us in Mumbai, Bangalore, and Delhi.</p>
+              </div>
             </div>
 
-            <div className="footer-links">
-              <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
-              <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
-              <a href="https://x.com" target="_blank" rel="noreferrer">X</a>
-            </div>
-
-            <div className="footer-contact">
-              <a href="mailto:hello@goldenriverperfume.com">hello@goldenriverperfume.com</a>
-              <a href="tel:+911234567890">+91 12345 67890</a>
+            <div className="footer-bottom">
               <p>© 2026 Golden River Perfumes. All rights reserved.</p>
+              <div className="footer-legal">
+                <a href="#privacy">Privacy Policy</a>
+                <span>•</span>
+                <a href="#terms">Terms of Service</a>
+                <span>•</span>
+                <a href="#accessibility">Accessibility</a>
+              </div>
             </div>
           </footer>
 
