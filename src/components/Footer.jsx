@@ -4,7 +4,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="footer">
+    <footer className="footer" >
       <div className="footer-content">
         <div className="footer-column footer-brand-col">
           <div className="brand-mark footer-brand">Golden River</div>

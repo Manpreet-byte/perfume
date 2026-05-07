@@ -7,17 +7,14 @@ import images from '../data/images'
 import PageTransition from '../components/PageTransition'
 import ProductCard from '../components/ProductCard'
 import SafeImage from '../components/SafeImage'
+import { useCart } from '../contexts/CartContext'
 
 export default function Home() {
+  const { addItem } = useCart()
   const [newsletterEmail, setNewsletterEmail] = useState('')
   const [newsletterStatus, setNewsletterStatus] = useState('idle') // idle | success
-
-  const heroBrand = useMemo(() => {
-    const name = (ai.brandName || '').trim()
-    if (!name) return { primary: 'Golden River', secondary: 'Perfume' }
-    const primary = name.replace(/\bperfumes?\b/gi, '').replace(/\s{2,}/g, ' ').trim()
-    return { primary: primary || name, secondary: 'Perfume' }
-  }, [])
+  const [searchQuery, setSearchQuery] = useState('')
+  const [filterSort, setFilterSort] = useState('all')
 
   useEffect(() => {
     document.title = `Home — ${ai.brandName}`
@@ -55,6 +52,24 @@ export default function Home() {
 
   const featuredPerfumes = useMemo(() => perfumes.slice(0, 6), [])
 
+  const allPerfumesFiltered = useMemo(() => {
+    let filtered = perfumes
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase()
+      filtered = filtered.filter(p =>
+        p.name.toLowerCase().includes(query) ||
+        p.shortDescription.toLowerCase().includes(query) ||
+        (p.notes && Array.isArray(p.notes) && p.notes.some(n => n.toLowerCase().includes(query)))
+      )
+    }
+    if (filterSort === 'price-low') {
+      filtered = [...filtered].sort((a, b) => parseFloat(a.price.replace(/[^\d.]/g, '')) - parseFloat(b.price.replace(/[^\d.]/g, '')))
+    } else if (filterSort === 'price-high') {
+      filtered = [...filtered].sort((a, b) => parseFloat(b.price.replace(/[^\d.]/g, '')) - parseFloat(a.price.replace(/[^\d.]/g, '')))
+    }
+    return filtered
+  }, [searchQuery, filterSort])
+
   function handleNewsletterSubmit(e) {
     e.preventDefault()
     if (!newsletterEmail.trim()) return
@@ -64,28 +79,39 @@ export default function Home() {
 
   return (
     <PageTransition className="page home-page">
-      <section className="hero-section large-hero">
-        <motion.div className="hero-content" initial={{ opacity: 0, x: -24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
-          <p className="eyebrow">Premium fragrance house</p>
-          <h1 className="hero-title">
-            <span className="hero-title-gold">{heroBrand.primary}</span>
-            <span className="hero-title-white">{heroBrand.secondary}</span>
-          </h1>
-          <p className="hero-tagline">Experience luxury in every drop</p>
-          <p className="hero-copy">{ai.homeIntro}</p>
-          <div className="hero-actions">
-            <Link className="button button-primary" to="/collection">Explore Collection</Link>
-            <Link className="button button-secondary" to="/about">Our Story</Link>
-          </div>
-        </motion.div>
-        <motion.div className="hero-visual" style={{ y }} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.1 }}>
-          <SafeImage
-            src="https://media.istockphoto.com/id/1326570912/photo/glass-bottle-of-perfume-on-golden-silk-background.jpg?s=612x612&w=0&k=20&c=rZwmd4ks8TjmgKOlkVJqb1_A2o-44y2lDYCgo8vk_1c="
-            fallbackSrc="/images/hero-luxury.svg"
-            alt="Perfume bottle"
+      <section className="hero-full">
+        <div className="hero-full-stage">
+          <img
+            className="hero-full-image"
+            src="https://eu.florislondon.com/cdn/shop/files/Second_Banner_Image_A_Rose_For....jpg?v=1752488230&width=1500"
+            alt="Fragrance hero"
             loading="eager"
           />
-        </motion.div>
+          <h1 className="hero-full-headline">
+            Unlock the power of <span>Fragrance</span>
+          </h1>
+        </div>
+
+        <div className="brand-logos">
+          <div className="logos-inner">
+            <div className="brand-logo">Rolliage</div>
+            <div className="brand-logo">QKE</div>
+            <div className="brand-logo">KS</div>
+            <div className="brand-logo">Maison</div>
+            <div className="brand-logo">Lune</div>
+          </div>
+        </div>
+
+        <div className="hero-categories">
+          <Link to="/collection?gender=men" className="cat-tile cat-men">
+            <div className="cat-caption">For Men</div>
+            <div className="cat-cta">Shop Now</div>
+          </Link>
+          <Link to="/collection?gender=women" className="cat-tile cat-women">
+            <div className="cat-caption">For Women</div>
+            <div className="cat-cta">Shop Now</div>
+          </Link>
+        </div>
       </section>
 
       <section className="content-section featured-products">
@@ -93,13 +119,34 @@ export default function Home() {
           <p className="section-label">Featured</p>
           <h2>Best sellers right now</h2>
         </div>
-        <div className="featured-grid">
-          {featuredPerfumes.map((p) => (
-            <ProductCard key={p.slug} perfume={p} />
+
+        <div className="browse-grid">
+          {perfumes.slice(0, 3).map((perfume) => (
+            <article key={perfume.slug} className="browse-product-card">
+              <div className="browse-image-wrap">
+                <SafeImage src={perfume.image} alt={perfume.name} className="browse-product-image" />
+              </div>
+              <div className="browse-product-info">
+                <div className="browse-title-price">
+                  <h3>{perfume.name}</h3>
+                  <span className="browse-price">{perfume.price}</span>
+                </div>
+                <p className="browse-description">{perfume.shortDescription}</p>
+                <div className="browse-actions">
+                  <Link className="button button-primary button-small" to={`/collection/${perfume.slug}`}>
+                    View Details
+                  </Link>
+                  <button className="button button-secondary button-small" onClick={() => addItem(perfume)}>
+                    Add
+                  </button>
+                </div>
+              </div>
+            </article>
           ))}
         </div>
-        <div className="about-cta" style={{ justifyContent: 'center' }}>
-          <Link className="button button-secondary" to="/collection">Browse all perfumes</Link>
+
+        <div className="about-cta" style={{ justifyContent: 'center', marginTop: '1.25rem' }}>
+          <Link className="button button-secondary" to="/collection">Explore more</Link>
         </div>
       </section>
 

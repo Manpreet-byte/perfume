@@ -6,30 +6,30 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
   line-height: 1.6;
   font-weight: 400;
-  /* Soft peachy-cream luxury palette */
-  --palette-1: #FDF7F4;
-  --palette-2: #FAF3EE;
-  --palette-3: #F5E8E0;
-  --palette-4: #EBD9CE;
+  /* Luxury palette */
+  --palette-1: #F2EDE4;
+  --palette-2: #E8DDD1;
+  --palette-3: #D8C9BA;
+  --palette-4: #7A0019;
   --palette-5: #000000;
 
   /* Text color */
   color: #000000;
   background:
-    radial-gradient(circle at top, rgba(233, 195, 170, 0.08), transparent 28%),
+    radial-gradient(circle at top, rgba(122, 0, 25, 0.10), transparent 28%),
     linear-gradient(180deg, var(--palette-1) 0%, var(--palette-2) 100%);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color-scheme: light;
-  --gold: #E9C3AA;
-  --gold-2: #F0D5C3;
-  --gold-ink: #A67C52;
+  --gold: #7A0019;
+  --gold-2: #A61B39;
+  --gold-ink: #7A0019;
   --black: #000000;
-  --white: #FDF7F4;
-  --soft: #8B7A71;
-  --shadow: 0 16px 40px rgba(107, 91, 82, 0.12);
+  --white: #FFFFFF;
+  --soft: #5C4E45;
+  --shadow: 0 14px 34px rgba(122, 0, 25, 0.07);
   --heading: 'Cormorant Garamond', 'Playfair Display', 'Georgia', serif;
   --body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
 }
@@ -41,9 +41,10 @@ html {
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   background:
-    radial-gradient(circle at top, rgba(233, 195, 170, 0.06), transparent 26%),
-    linear-gradient(180deg, var(--palette-1) 0%, var(--palette-2) 100%);
+    radial-gradient(circle at top, rgba(122, 0, 25, 0.08), transparent 24%),
+    linear-gradient(180deg, #F2EDE4 0%, #EEE4D7 52%, #E2D3C2 100%);
 }
 
 body::before {
@@ -51,8 +52,8 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: linear-gradient(rgba(107, 91, 82, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(107, 91, 82, 0.02) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(122, 0, 25, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(122, 0, 25, 0.028) 1px, transparent 1px);
   background-size: 3rem 3rem;
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.4), transparent 92%);
   opacity: 0.2;
@@ -84,4 +85,226 @@ button {
 ::selection {
   background: rgba(233, 195, 170, 0.3);
   color: #000000;
+}
+
+/* Chatbot UI styles */
+.chatbot {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 60;
+  font-family: var(--body);
+}
+
+.chat-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(253,252,240,0.98);
+  color: var(--black);
+  border: 1px solid rgba(201,168,76,0.22);
+  box-shadow: 0 8px 24px rgba(201,168,76,0.06);
+  font-weight: 600;
+  min-height: 40px;
+}
+
+.chat-toggle[aria-expanded="true"] {
+  background: transparent;
+  color: var(--black);
+  border-color: rgba(0,0,0,0.12);
+}
+
+.chat-window {
+  width: 340px;
+  max-width: calc(100vw - 48px);
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+  background: rgba(253,252,240,0.98);
+  box-shadow: 0 12px 36px rgba(201,168,76,0.06);
+  border: 1px solid rgba(201,168,76,0.12);
+}
+
+.chat-messages {
+  flex: 1 1 auto;
+  overflow: auto;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.msg {
+  max-width: 84%;
+  padding: 0.55rem 0.75rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.msg.bot {
+  align-self: flex-start;
+  background: rgba(253,252,240,0.95);
+  color: var(--black);
+  border: 1px solid rgba(233,195,170,0.12);
+}
+
+.msg.user {
+  align-self: flex-end;
+  background: rgba(201,168,76,0.12);
+  color: var(--black);
+  border: 1px solid rgba(201,168,76,0.18);
+}
+
+.chat-input {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.chat-input input {
+  flex: 1 1 auto;
+  padding: 0.6rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: rgba(255,255,255,0.6);
+  outline: none;
+}
+
+.chat-input input:focus {
+  box-shadow: 0 4px 14px rgba(233,195,170,0.12);
+  border-color: rgba(166,124,82,0.18);
+}
+
+.chat-input button {
+  background: var(--gold-ink);
+  color: var(--white);
+  border-radius: 999px;
+  padding: 0.5rem 0.9rem;
+  border: none;
+  font-weight: 600;
+}
+
+/* Make chat and voice pills maroon */
+.chat-toggle,
+.assistant-pill,
+.voice-pill {
+  background: var(--lux-maroon);
+  color: var(--white);
+  border-color: rgba(122,0,25,0.18);
+  box-shadow: 0 8px 20px rgba(122,0,25,0.12);
+}
+
+.voice-pill .avatar-circle {
+  background: radial-gradient(circle at 35% 25%, var(--lux-maroon) 0%, rgba(240,213,195,0.14) 30%);
+}
+
+@media (max-width: 420px) {
+  .chat-window {
+    left: 12px;
+    right: 12px;
+    width: auto;
+    height: 62vh;
+  }
+  .chat-toggle {
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
+/* Assistant pill group (label + chat/voice pills) */
+.assistant-label {
+  position: absolute;
+  top: -34px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  width: max-content;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(253,252,240,0.95);
+  color: rgba(0,0,0,0.85);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: inline-block;
+  border: 1px solid rgba(201,168,76,0.14);
+}
+
+.assistant-pills {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: transparent;
+}
+
+.assistant-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 44px;
+  padding: 0 0.75rem;
+  border-radius: 999px;
+  background: rgba(253,252,240,0.98);
+  color: var(--black);
+  box-shadow: 0 8px 20px rgba(201,168,76,0.06);
+  border: 1px solid rgba(201,168,76,0.14);
+  font-weight: 600;
+}
+
+.assistant-pill:hover {
+  transform: translateY(-3px);
+  transition: transform 200ms ease;
+}
+
+.voice-pill {
+  background: linear-gradient(90deg, rgba(253,252,240,0.98), rgba(250,243,238,0.98));
+  padding: 0.2rem 0.8rem;
+  min-width: 92px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(201,168,76,0.16);
+}
+
+.voice-pill .voice-toggle {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.voice-pill .avatar-circle {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: radial-gradient(circle at 35% 25%, var(--gold) 0%, rgba(240,213,195,0.14) 30%);
+  box-shadow: 0 4px 12px rgba(166,124,82,0.08) inset;
+  font-size: 16px;
+}
+
+/* When chat window is open, keep the pills visible but slightly folded */
+.chatbot.open .assistant-pill.chat-toggle {
+  background: rgba(253,252,240,0.96);
+  color: var(--black);
+  border-color: rgba(201,168,76,0.12);
+}
+
+@media (max-width: 520px) {
+  .assistant-pill { min-width: 48px; height:48px; }
+  .voice-pill { min-width: 92px; height:48px }
+  .assistant-label { display: none }
 }

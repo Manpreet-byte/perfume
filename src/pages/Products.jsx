@@ -4,6 +4,7 @@ import ai from '../data/aiContent'
 import perfumes from '../data/perfumes'
 import PageTransition from '../components/PageTransition'
 import ProductCard from '../components/ProductCard'
+import { useCart } from '../contexts/CartContext'
 import woodyIcon from '../assets/icons/woody.svg'
 import floralIcon from '../assets/icons/floral.svg'
 import freshIcon from '../assets/icons/fresh.svg'
@@ -34,6 +35,7 @@ function Filters({ query, category, onQueryChange, onCategoryChange }) {
 export default function Products() {
   const [query, setQuery] = useState('')
   const [category, setCategory] = useState('all')
+  const { addItem } = useCart()
 
   useEffect(() => {
     document.title = `Collection — ${ai.brandName}`
@@ -139,12 +141,29 @@ export default function Products() {
           <p>Showing {filtered.length} fragrance{filtered.length !== 1 ? 's' : ''}</p>
         </div>
 
-        <div className="product-grid">
+        <div className="browse-grid">
           {filtered.length > 0 ? (
             filtered.map((perfume) => (
-              <motion.div key={perfume.slug} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.45 }}>
-                <ProductCard perfume={perfume} />
-              </motion.div>
+              <motion.article key={perfume.slug} className="browse-product-card" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.45 }}>
+                <div className="browse-image-wrap">
+                  <img src={perfume.image} alt={perfume.name} className="browse-product-image" />
+                </div>
+                <div className="browse-product-info">
+                  <div className="browse-title-price">
+                    <h3>{perfume.name}</h3>
+                    <span className="browse-price">{perfume.price}</span>
+                  </div>
+                  <p className="browse-description">{perfume.shortDescription}</p>
+                  <div className="browse-actions">
+                    <a className="button button-primary button-small" href={`#/collection/${perfume.slug}`}>
+                      View Details
+                    </a>
+                    <button className="button button-secondary button-small" onClick={() => addItem(perfume)}>
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </motion.article>
             ))
           ) : (
             <motion.div className="no-results" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>

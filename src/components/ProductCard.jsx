@@ -14,7 +14,6 @@ export default function ProductCard({ perfume }) {
           <h3>{perfume.name}</h3>
           <span>{perfume.price}</span>
         </div>
-        <p>{perfume.shortDescription}</p>
         <div className="product-actions">
           <Link className="button button-primary button-small" to={`/collection/${perfume.slug}`}>
             View Details

@@ -10,6 +10,7 @@ import ProductDetail from './pages/ProductDetail'
 import Contact from './pages/Contact'
 import Chatbot from './components/Chatbot'
 import VoiceAvatar from './components/VoiceAvatar'
+import Draggable from './components/Draggable'
 import CartDrawer from './components/CartDrawer'
 import { CartProvider, useCart } from './contexts/CartContext'
 import instagramLogo from './assets/logos/instagram.svg'
@@ -150,13 +151,21 @@ export default function App() {
             </div>
           </footer>
 
-          <div className="ai-assistant-dock" aria-label="AI Shopping Assistants">
-            <div className="ai-assistant-label">AI Shopping Assistants</div>
-            <div className="ai-assistant-actions">
-              <Chatbot />
-              <VoiceAvatar text={'Welcome to Golden River Perfume. How can I assist you today?'} />
-            </div>
-          </div>
+          <Draggable
+            storageKey="assistant:chat"
+            defaultPosition={{ x: 16, y: 10000 }}
+            className="ai-widget"
+          >
+            <Chatbot />
+          </Draggable>
+
+          <Draggable
+            storageKey="assistant:voice"
+            defaultPosition={{ x: 10000, y: 10000 }}
+            className="ai-widget"
+          >
+            <VoiceAvatar text={'Welcome to Golden River Perfume. How can I assist you today?'} />
+          </Draggable>
 
           <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
         </div>
